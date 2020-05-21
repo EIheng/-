@@ -64,14 +64,16 @@ void Match_Brackets(string strs)
         cout << "括号不匹配！" << endl;
     }
 }
-// 递归解决汉若塔问题
+// 递归解决汉诺塔问题
 void Towers_Of_Hanoi(int n, int x, int y, int z)
 {
     if (n > 0)
     {
+        // 将n-1从塔1搬到塔2
         Towers_Of_Hanoi(n - 1, x, z, y);
-        cout << "移动顶端的盘子从" << x
-            << "到" << y << endl;
+        // 将最底下的盘子从塔1搬到塔3
+        cout << "移动顶端的盘子从" << x << "到" << y << endl;
+        // 将n-1从塔2搬到塔3
         Towers_Of_Hanoi(n - 1, z, y, x);
     }
 }
